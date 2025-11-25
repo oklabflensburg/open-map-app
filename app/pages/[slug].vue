@@ -1,11 +1,13 @@
 <template>
   <section class="home">
-    <MonumentsMap />
+    <ClientOnly>
+      <MonumentMap />
+    </ClientOnly>
   </section>
 </template>
 
 <script setup lang="ts">
-import MonumentsMap from '~/components/MonumentsMap.vue'
+import MonumentMap from '~/components/MonumentMap.client.vue'
 
 definePageMeta({
   layoutMode: 'zero-padding'

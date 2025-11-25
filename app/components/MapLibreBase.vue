@@ -21,7 +21,7 @@ const props = withDefaults(defineProps<Props>(), {
     sources: {
       osm: {
         type: 'raster',
-        tiles: ['https://tiles.oklabflensburg.de/fosm/{z}/{x}/{y}.png'],
+        tiles: ['https://tiles.oklabflensburg.de/sgm/{z}/{x}/{y}.png'],
         tileSize: 256,
         attribution:
           '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="dc:rights">OpenStreetMap</a> contributors'

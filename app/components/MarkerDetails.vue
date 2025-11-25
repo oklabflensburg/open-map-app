@@ -101,10 +101,18 @@ const activeMarker = computed(() => {
 const openModal = () => {
   if (!activeMarker.value.photoLink) return
   isModalOpen.value = true
+  window.addEventListener('keydown', handleEscapeKey)
 }
 
 const closeModal = () => {
   isModalOpen.value = false
+  window.removeEventListener('keydown', handleEscapeKey)
+}
+
+const handleEscapeKey = (e: KeyboardEvent) => {
+  if (e.key === 'Escape') {
+    closeModal()
+  }
 }
 
 const selectMarker = (id: string) => {
