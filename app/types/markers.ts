@@ -10,12 +10,15 @@ export type MarkerDetailsData = {
   city?: string
   district?: string
   municipality?: string
-  monumentType?: string
-  monumentFunction?: string
+  category?: string
+  artist?: string
   objectNumber?: string
   lastUpdate?: string
   photoLink?: string
   detailLink?: string
+  remarks?: string
+  measurements?: string
+  condition?: string
 }
 
 // Alias for backward compatibility

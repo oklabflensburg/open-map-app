@@ -12,7 +12,7 @@
           :aria-pressed="item.id === activeId"
           @click="selectMarker(item.id || '')"
         >
-          <span class="marker-details__accordion-title">{{ item.monumentType || item.title }}</span>
+          <span class="marker-details__accordion-title">{{ item.category || item.title }}</span>
           <span class="marker-details__accordion-subtitle">{{ formatAddress(item) }}</span>
         </button>
       </div>
@@ -25,12 +25,11 @@
         :alt="activeMarker.title"
         loading="lazy"
       />
-      <figcaption class="marker-details__figcaption">Foto © Landesamt für Denkmalpflege</figcaption>
+      <figcaption class="marker-details__figcaption">Foto © Kunstwerk Archiv</figcaption>
     </figure>
 
-    {{ activeMarker }}
     <ul class="marker-details__list">
-      <li class="marker-details__title"><strong>{{ activeMarker.monumentType || activeMarker.title }}</strong></li>
+      <li class="marker-details__title"><strong>{{ activeMarker.title }}</strong></li>
       <li class="marker-details__address">
         <span v-if="activeMarker.street || activeMarker.housenumber">
           {{ [activeMarker.street, activeMarker.housenumber].filter(Boolean).join(' ') }}
@@ -41,13 +40,25 @@
         <strong>Beschreibung</strong><br>
         {{ activeMarker.description }}
       </li>
+      <li class="marker-details__section" v-if="activeMarker.artist">
+        <strong>Künstler</strong><br>
+        {{ activeMarker.artist }}
+      </li>
+      <li class="marker-details__section" v-if="activeMarker.category">
+        <strong>Kategorie</strong><br>
+        {{ activeMarker.category }}
+      </li>
       <li class="marker-details__section" v-if="activeMarker.lastUpdate">
-        <strong>Aktualisiert</strong><br>
+        <strong>Jahr der Installation</strong><br>
         {{ activeMarker.lastUpdate }}
       </li>
-      <li class="marker-details__section" v-if="activeMarker.monumentFunction">
-        <strong>Merkmal</strong><br>
-        {{ activeMarker.monumentFunction }}
+      <li class="marker-details__section" v-if="activeMarker.measurements">
+        <strong>Maße</strong><br>
+        {{ activeMarker.measurements }}
+      </li>
+      <li class="marker-details__section" v-if="activeMarker.condition">
+        <strong>Zustand</strong><br>
+        {{ activeMarker.condition }}
       </li>
     </ul>
 

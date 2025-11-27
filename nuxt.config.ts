@@ -4,6 +4,12 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   css: ['leaflet/dist/leaflet.css', '@/assets/styles/main.scss'],
   modules: ['@nuxtjs/tailwindcss', '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt', '@nuxtjs/i18n'],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {}
+    }
+  },
   runtimeConfig: {
     public: {
       apiBaseUrl: process.env.NUXT_PUBLIC_API_BASE_URL
