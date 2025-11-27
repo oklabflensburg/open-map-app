@@ -28,7 +28,6 @@
       <figcaption class="marker-details__figcaption">Foto © Landesamt für Denkmalpflege</figcaption>
     </figure>
 
-    {{ activeMarker }}
     <ul class="marker-details__list">
       <li class="marker-details__title"><strong>{{ activeMarker.monumentType || activeMarker.title }}</strong></li>
       <li class="marker-details__address">
